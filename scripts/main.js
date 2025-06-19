@@ -127,10 +127,10 @@ async function createLores(actor) {
     return lores;
 }
 
-async function prepareSpell(uuid, spellEntry) {
+async function prepareSpell(uuid, spellEntry, withSignature=true) {
     let o = (await fromUuid(uuid)).toObject();
     o.system.location.value = spellEntry.id;
-    if (game.settings.get(moduleName, "signatureSpell")) {
+    if (game.settings.get(moduleName, "signatureSpell") && withSignature) {
         o.system.location.signature = true;
     }
     return o;
@@ -152,11 +152,11 @@ async function createSpells(spellEntry, lores) {
             if (i > maxRank) {
                 break
             }
-            allSpells.push(await prepareSpell(spells[i], spellEntry));
+            allSpells.push(await prepareSpell(spells[i], spellEntry, i !== 0));
         }
     }
     if (maxRank >= 10) {
-        allSpells.push(await prepareSpell("Compendium.pf2e.spells-srd.Item.ckUOoqOM7Kg7VqxB", spellEntry));
+        allSpells.push(await prepareSpell("Compendium.pf2e.spells-srd.Item.ckUOoqOM7Kg7VqxB", spellEntry, false));
     }
     if (rollOptions.includes("feat:embodiment-of-the-balance")) {
         allSpells.push(await prepareSpell("Compendium.pf2e.spells-srd.Item.rfZpqmj0AIIdkVIs", spellEntry));

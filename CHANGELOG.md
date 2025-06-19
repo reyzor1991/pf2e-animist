@@ -1,3 +1,6 @@
+## Version 0.2.3
+- Fix - not add cantrips to signature
+
 ## Version 0.2.2
 - Fix localization
 
