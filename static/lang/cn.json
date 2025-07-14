@@ -1,0 +1,21 @@
+{
+  "pf2e-animist": {
+    "primary-label": "第一精魄",
+    "secondary-label": "第二精魄",
+    "third-label": "第三精魄",
+    "fourth-label": "第四精魄",
+
+    "crafter-in-the-vault": "宝库工匠",
+    "custodian-of-groves-and-gardens": "园林看守",
+    "echo-of-lost-moments": "逝时回声",
+    "impostor-in-hidden-places": "秘所骗徒",
+    "lurker-in-devouring-dark": "噬暗潜物",
+    "monarch-of-the-fey-courts": "妖庭君王",
+    "reveler-in-lost-glee": "失乐欢宾",
+    "stalker-in-darkened-boughs": "暗枝猎手",
+    "steward-of-stone-and-fire": "石火管家",
+    "vanguard-of-roaring-waters": "激流先锋",
+    "witness-to-ancient-battles": "古战历客",
+    "dispersed": "已解散"
+  }
+}
