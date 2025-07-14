@@ -1,3 +1,6 @@
+## Version 0.2.4
+- Add Chinese localization (Kuroni)
+
 ## Version 0.2.3
 - Fix - not add cantrips to signature
 
