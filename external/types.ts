@@ -289,6 +289,7 @@ declare global {
         getRollOptions(): string[]
 
         toggleRollOption(domain: string, value: string): Promise<void>;
+        toggleRollOption(domain: string, value: string, itemId: string, optionValue:any, suboption:string): Promise<void>;
 
         rollOptions: {
             all: { [key: string]: string };

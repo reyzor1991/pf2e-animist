@@ -1,3 +1,7 @@
+## Version 0.2.5
+- Add Shepherd of Errant Winds
+- Add Speaker in Sibilance
+
 ## Version 0.2.4
 - Add Chinese localization (Kuroni)
 

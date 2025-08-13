@@ -31,6 +31,14 @@ export const FIRST = {
             "value": "reveler-in-lost-glee"
         },
         {
+            "label": "pf2e-animist.shepherd-of-errant-winds",
+            "value": "shepherd-of-errant-winds"
+        },
+        {
+            "label": "pf2e-animist.speaker-in-sibilance",
+            "value": "speaker-in-sibilance"
+        },
+        {
             "label": "pf2e-animist.stalker-in-darkened-boughs",
             "value": "stalker-in-darkened-boughs"
         },
@@ -122,6 +130,24 @@ export const SECOND = {
             "predicate": [
                 {
                     "not": "primary-apparition:reveler-in-lost-glee"
+                }
+            ]
+        },
+        {
+            "label": "pf2e-animist.shepherd-of-errant-winds",
+            "value": "shepherd-of-errant-winds",
+            "predicate": [
+                {
+                    "not": "primary-apparition:shepherd-of-errant-winds"
+                }
+            ]
+        },
+        {
+            "label": "pf2e-animist.speaker-in-sibilance",
+            "value": "speaker-in-sibilance",
+            "predicate": [
+                {
+                    "not": "primary-apparition:speaker-in-sibilance"
                 }
             ]
         },
@@ -257,6 +283,30 @@ export const THIRD = {
                     "nor": [
                         "primary-apparition:reveler-in-lost-glee",
                         "secondary-apparition:reveler-in-lost-glee"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "pf2e-animist.shepherd-of-errant-winds",
+            "value": "shepherd-of-errant-winds",
+            "predicate": [
+                {
+                    "nor": [
+                        "primary-apparition:shepherd-of-errant-winds",
+                        "secondary-apparition:shepherd-of-errant-winds"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "pf2e-animist.speaker-in-sibilance",
+            "value": "speaker-in-sibilance",
+            "predicate": [
+                {
+                    "nor": [
+                        "primary-apparition:speaker-in-sibilance",
+                        "secondary-apparition:speaker-in-sibilance"
                     ]
                 }
             ]
@@ -417,6 +467,32 @@ export const FOURTH = {
             ]
         },
         {
+            "label": "pf2e-animist.shepherd-of-errant-winds",
+            "value": "shepherd-of-errant-winds",
+            "predicate": [
+                {
+                    "nor": [
+                        "primary-apparition:shepherd-of-errant-winds",
+                        "secondary-apparition:shepherd-of-errant-winds",
+                        "third-apparition:shepherd-of-errant-winds"
+                    ]
+                }
+            ]
+        },
+        {
+            "label": "pf2e-animist.speaker-in-sibilance",
+            "value": "speaker-in-sibilance",
+            "predicate": [
+                {
+                    "nor": [
+                        "primary-apparition:speaker-in-sibilance",
+                        "secondary-apparition:speaker-in-sibilance",
+                        "third-apparition:speaker-in-sibilance"
+                    ]
+                }
+            ]
+        },
+        {
             "label": "pf2e-animist.stalker-in-darkened-boughs",
             "value": "stalker-in-darkened-boughs",
             "predicate": [
@@ -475,7 +551,7 @@ export const FOURTH = {
     ],
     "toggleable": true,
     "alwaysActive": true,
-    "label":"pf2e-animist.fourth-label",
+    "label": "pf2e-animist.fourth-label",
     "value": true,
     "selection": "dispersed"
 }
@@ -484,43 +560,49 @@ export const moduleName = "pf2e-animist";
 
 export const APPARITIONS = {
     "crafter-in-the-vault": ["Architecture", "Engineering"],
-    'custodian-of-groves-and-gardens': ["Farming", "Herbalism"],
+    "custodian-of-groves-and-gardens": ["Farming", "Herbalism"],
     "echo-of-lost-moments": ["Fortune-Telling", "Genealogy"],
-    'impostor-in-hidden-places': ["Fortune-Telling", "Underworld"],
-    'lurker-in-devouring-dark': ["Ocean", "Sailing"],
+    "impostor-in-hidden-places": ["Fortune-Telling", "Underworld"],
+    "lurker-in-devouring-dark": ["Ocean", "Sailing"],
     "monarch-of-the-fey-courts": ["Art", "Fey"],
-    'reveler-in-lost-glee': ["Circus", "Fortune-Telling"],
-    'stalker-in-darkened-boughs': ["Forest", "Hunting"],
-    'steward-of-stone-and-fire': ["Mountain", "Volcano"],
-    'vanguard-of-roaring-waters': ["Mountain", "River"],
-    'witness-to-ancient-battles': ["Battlegrounds", "Heraldry"],
+    "reveler-in-lost-glee": ["Circus", "Fortune-Telling"],
+    "shepherd-of-errant-winds": ["Sailing", "Scouting"],
+    "speaker-in-sibilance": ["Fortune-Telling", "Mountain"],
+    "stalker-in-darkened-boughs": ["Forest", "Hunting"],
+    "steward-of-stone-and-fire": ["Mountain", "Volcano"],
+    "vanguard-of-roaring-waters": ["Mountain", "River"],
+    "witness-to-ancient-battles": ["Battlegrounds", "Heraldry"],
 }
 export const UUID_APPARITIONS = {
     "Compendium.pf2e.classfeatures.Item.csrF8UOWPl1rr6st": "crafter-in-the-vault",
-    'Compendium.pf2e.classfeatures.Item.EyRHVD4h2eZYIsk5': 'custodian-of-groves-and-gardens',
+    "Compendium.pf2e.classfeatures.Item.EyRHVD4h2eZYIsk5": "custodian-of-groves-and-gardens",
     "Compendium.pf2e.classfeatures.Item.UbOFa3BBHO8HwLJR": "echo-of-lost-moments",
-    "Compendium.pf2e.classfeatures.Item.Gss5cYmRySgi1UxP": 'impostor-in-hidden-places',
-    'Compendium.pf2e.classfeatures.Item.NNVkvA9fmyFy68ag': 'lurker-in-devouring-dark',
+    "Compendium.pf2e.classfeatures.Item.Gss5cYmRySgi1UxP": "impostor-in-hidden-places",
+    "Compendium.pf2e.classfeatures.Item.NNVkvA9fmyFy68ag": "lurker-in-devouring-dark",
     "Compendium.pf2e.classfeatures.Item.95maDg6AsCTLPAmS": "monarch-of-the-fey-courts",
-    "Compendium.pf2e.classfeatures.Item.9PYHXFMmbHyp4aTL": 'reveler-in-lost-glee',
-    'Compendium.pf2e.classfeatures.Item.ImJ09rEZW5WtS26L': 'stalker-in-darkened-boughs',
-    'Compendium.pf2e.classfeatures.Item.ILGq8LQBnwsAz2jK': 'steward-of-stone-and-fire',
-    'Compendium.pf2e.classfeatures.Item.M3q0KIyuMvSgUZH7': 'vanguard-of-roaring-waters',
-    "Compendium.pf2e.classfeatures.Item.k9P2mXRjyy5X24rH": 'witness-to-ancient-battles',
+    "Compendium.pf2e.classfeatures.Item.9PYHXFMmbHyp4aTL": "reveler-in-lost-glee",
+    "Compendium.pf2e.classfeatures.Item.aFVxfp7uQ0ac87GN": "shepherd-of-errant-winds",
+    "Compendium.pf2e.classfeatures.Item.2XlUg9JXtwnSbWOY": "speaker-in-sibilance",
+    "Compendium.pf2e.classfeatures.Item.ImJ09rEZW5WtS26L": "stalker-in-darkened-boughs",
+    "Compendium.pf2e.classfeatures.Item.ILGq8LQBnwsAz2jK": "steward-of-stone-and-fire",
+    "Compendium.pf2e.classfeatures.Item.M3q0KIyuMvSgUZH7": "vanguard-of-roaring-waters",
+    "Compendium.pf2e.classfeatures.Item.k9P2mXRjyy5X24rH": "witness-to-ancient-battles",
 }
 
 export const VESSEL_FOCUS = {
     "crafter-in-the-vault": "Compendium.pf2e.spells-srd.Item.rzcXUF5YmJYxgxEa",
-    'custodian-of-groves-and-gardens': "Compendium.pf2e.spells-srd.Item.w4M6Vqvq8k6MOFvj",
+    "custodian-of-groves-and-gardens": "Compendium.pf2e.spells-srd.Item.w4M6Vqvq8k6MOFvj",
     "echo-of-lost-moments": "Compendium.pf2e.spells-srd.Item.FZMVLL7HvasjiM6D",
-    'impostor-in-hidden-places': "Compendium.pf2e.spells-srd.Item.t1e3U2eluRsp2izf",
-    'lurker-in-devouring-dark': "Compendium.pf2e.spells-srd.Item.wTldMJx0vyBAehrI",
+    "impostor-in-hidden-places": "Compendium.pf2e.spells-srd.Item.t1e3U2eluRsp2izf",
+    "lurker-in-devouring-dark": "Compendium.pf2e.spells-srd.Item.wTldMJx0vyBAehrI",
     "monarch-of-the-fey-courts": "Compendium.pf2e.spells-srd.Item.SAmyaiVKTDrUNjot",
-    'reveler-in-lost-glee': "Compendium.pf2e.spells-srd.Item.cuKVbWWNzJj1GDpZ",
-    'stalker-in-darkened-boughs': 'Compendium.pf2e.spells-srd.Item.BhJtCTLbngvZm8EA',
-    'steward-of-stone-and-fire': "Compendium.pf2e.spells-srd.Item.PrlR2sLWeiuTcPF2",
-    'vanguard-of-roaring-waters': "Compendium.pf2e.spells-srd.Item.ew4ToaTU3o8ahKio",
-    'witness-to-ancient-battles': "Compendium.pf2e.spells-srd.Item.X4On99Nti8gjWywG",
+    "reveler-in-lost-glee": "Compendium.pf2e.spells-srd.Item.cuKVbWWNzJj1GDpZ",
+    "shepherd-of-errant-winds": "Compendium.pf2e.spells-srd.Item.x2Gf3lt64eoMocMd",
+    "speaker-in-sibilance": "Compendium.pf2e.spells-srd.Item.h2DLv8TQV0Z83tQp",
+    "stalker-in-darkened-boughs": "Compendium.pf2e.spells-srd.Item.BhJtCTLbngvZm8EA",
+    "steward-of-stone-and-fire": "Compendium.pf2e.spells-srd.Item.PrlR2sLWeiuTcPF2",
+    "vanguard-of-roaring-waters": "Compendium.pf2e.spells-srd.Item.ew4ToaTU3o8ahKio",
+    "witness-to-ancient-battles": "Compendium.pf2e.spells-srd.Item.X4On99Nti8gjWywG",
 }
 
 export const APPARITIONS_SPELLCASTING = {
@@ -536,7 +618,7 @@ export const APPARITIONS_SPELLCASTING = {
         "Compendium.pf2e.spells-srd.Item.89Hj5QuqvcwVXcqj",
         "Compendium.pf2e.spells-srd.Item.KPDHmmjJiw7PhTYF",
     ],
-    'custodian-of-groves-and-gardens': [
+    "custodian-of-groves-and-gardens": [
         "Compendium.pf2e.spells-srd.Item.uZK2BYzPnxUBnDjr",
         "Compendium.pf2e.spells-srd.Item.K9gI08enGtmih5X1",
         "Compendium.pf2e.spells-srd.Item.C0D2eqzTAhiKm4j9",
@@ -560,7 +642,7 @@ export const APPARITIONS_SPELLCASTING = {
         "Compendium.pf2e.spells-srd.Item.Oj1PJBMQD9vuwCv7",
         "Compendium.pf2e.spells-srd.Item.qsNeG9KZpODSACMq",
     ],
-    'impostor-in-hidden-places': [
+    "impostor-in-hidden-places": [
         "Compendium.pf2e.spells-srd.Item.pwzdSlJgYqN7bs2w",
         "Compendium.pf2e.spells-srd.Item.6ZIKB0151LUR19Rw",
         "Compendium.pf2e.spells-srd.Item.XXqE1eY3w3z6xJCB",
@@ -572,7 +654,7 @@ export const APPARITIONS_SPELLCASTING = {
         "Compendium.pf2e.spells-srd.Item.wfleiawxsfhpRRwf",
         "Compendium.pf2e.spells-srd.Item.MJx7DmjsWYzDZ3a4",
     ],
-    'lurker-in-devouring-dark': [
+    "lurker-in-devouring-dark": [
         "Compendium.pf2e.spells-srd.Item.thAHF1zxNplLCJPO",
         "Compendium.pf2e.spells-srd.Item.k34hDOfIIMAxNL4a",
         "Compendium.pf2e.spells-srd.Item.9h9YCncqah6VNsKf",
@@ -596,7 +678,7 @@ export const APPARITIONS_SPELLCASTING = {
         "Compendium.pf2e.spells-srd.Item.Jvyy6oVIQsD34MHB",
         "Compendium.pf2e.spells-srd.Item.FmNDwqMEjeTEGPrY",
     ],
-    'reveler-in-lost-glee': [
+    "reveler-in-lost-glee": [
         "Compendium.pf2e.spells-srd.Item.Qw3fnUlaUbnn7ipC",
         "Compendium.pf2e.spells-srd.Item.UKsIOWmMx4hSpafl",
         "Compendium.pf2e.spells-srd.Item.tlSE7Ly8vi1Dgddv",
@@ -608,7 +690,31 @@ export const APPARITIONS_SPELLCASTING = {
         "Compendium.pf2e.spells-srd.Item.Oj1PJBMQD9vuwCv7",
         "Compendium.pf2e.spells-srd.Item.FEsuyf203wTNE2et",
     ],
-    'stalker-in-darkened-boughs': [
+    "shepherd-of-errant-winds": [
+        "Compendium.pf2e.spells-srd.Item.1Yoipc5jNcMehtEW",
+        "Compendium.pf2e.spells-srd.Item.KcLVELhCUcKXxiKE",
+        "Compendium.pf2e.spells-srd.Item.jlOAXuIOM3YxZKmn",
+        "Compendium.pf2e.spells-srd.Item.it4ZsAi6XgvGcodc",
+        "Compendium.pf2e.spells-srd.Item.V8wXOsoejQhe6CyG",
+        "Compendium.pf2e.spells-srd.Item.Ek5XI0aEdZhBgm21",
+        "Compendium.pf2e.spells-srd.Item.WPXzPl7YbMEIGWfi",
+        "Compendium.pf2e.spells-srd.Item.kk7JKox6MdGAWmCH",
+        "Compendium.pf2e.spells-srd.Item.wi405lBjPcbF1DeR",
+        "Compendium.pf2e.spells-srd.Item.yLJROsQtyrPIKcDx"
+    ],
+    "speaker-in-sibilance": [
+        "Compendium.pf2e.spells-srd.Item.D7ZEhTNIDWDLC2J4",
+        "Compendium.pf2e.spells-srd.Item.6ZIKB0151LUR19Rw",
+        "Compendium.pf2e.spells-srd.Item.CQb8HtQ1BPeZmu9h",
+        "Compendium.pf2e.spells-srd.Item.ZYoC630tNGutgbE0",
+        "Compendium.pf2e.spells-srd.Item.wLWMswY7aBHEFTRb",
+        "Compendium.pf2e.spells-srd.Item.xFp4EwVcYwSG336t",
+        "Compendium.pf2e.spells-srd.Item.znv4ECL7ZtuiagtA",
+        "Compendium.pf2e.spells-srd.Item.O6VQC1Bs4aSYDa6R",
+        "Compendium.pf2e.spells-srd.Item.y2cQYLr5mljDSu1G",
+        "Compendium.pf2e.spells-srd.Item.FmNDwqMEjeTEGPrY"
+    ],
+    "stalker-in-darkened-boughs": [
         "Compendium.pf2e.spells-srd.Item.MPxbKoR54gkYkqLO",
         "Compendium.pf2e.spells-srd.Item.EE7Q5BHIrfWNCPtT",
         "Compendium.pf2e.spells-srd.Item.cB17yFc9456Pyfec",
@@ -620,7 +726,7 @@ export const APPARITIONS_SPELLCASTING = {
         "Compendium.pf2e.spells-srd.Item.8AMvNVOUEtxBCDvJ",
         "Compendium.pf2e.spells-srd.Item.yLJROsQtyrPIKcDx",
     ],
-    'steward-of-stone-and-fire': [
+    "steward-of-stone-and-fire": [
         "Compendium.pf2e.spells-srd.Item.6DfLZBl8wKIV03Iq",
         "Compendium.pf2e.spells-srd.Item.HokKyQl5g655xx9U",
         "Compendium.pf2e.spells-srd.Item.v89KwyaBd6g5rWVS",
@@ -632,7 +738,7 @@ export const APPARITIONS_SPELLCASTING = {
         "Compendium.pf2e.spells-srd.Item.x7SPrsRxGb2Vy2nu",
         "Compendium.pf2e.spells-srd.Item.jrBa9deU2ULFWvSl",
     ],
-    'vanguard-of-roaring-waters': [
+    "vanguard-of-roaring-waters": [
         "Compendium.pf2e.spells-srd.Item.zhDIiQlJmrd4UDNC",
         "Compendium.pf2e.spells-srd.Item.jfVCuOpzC6mUrf6f",
         "Compendium.pf2e.spells-srd.Item.9XHmC2JgTUIQ1CCm",
@@ -644,7 +750,7 @@ export const APPARITIONS_SPELLCASTING = {
         "Compendium.pf2e.spells-srd.Item.0fjz8qc9NfkmWmJZ",
         "Compendium.pf2e.spells-srd.Item.yLJROsQtyrPIKcDx",
     ],
-    'witness-to-ancient-battles': [
+    "witness-to-ancient-battles": [
         "Compendium.pf2e.spells-srd.Item.TVKNbcgTee19PXZR",
         "Compendium.pf2e.spells-srd.Item.Gb7SeieEvd0pL2Eh",
         "Compendium.pf2e.spells-srd.Item.wzctak6BxOW8xvFV",
@@ -754,5 +860,5 @@ export const FOCUS_ENTRY = {
     "flags": {}
 }
 
-export const APPARITION_OPTIONS = ['primary-apparition:', 'secondary-apparition:', 'third-apparition:', 'fourth-apparition:'];
+export const APPARITION_OPTIONS = ["primary-apparition:", "secondary-apparition:", "third-apparition:", "fourth-apparition:"];
 

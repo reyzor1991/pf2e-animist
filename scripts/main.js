@@ -29,9 +29,9 @@ function currentSpellEntries(actor) {
     let featName = actor.items.find(i => i.sourceId === "Compendium.pf2e.classfeatures.Item.AHMjKkIx21AoMc9W")?.name
 
     let entry = actor.itemTypes.spellcastingEntry
-        .find(s => s.name === 'Apparition Attunement' || s.name === featName);
+        .find(s => s.name === "Apparition Attunement" || s.name === featName);
     let focus = actor.itemTypes.spellcastingEntry
-        .find(s => s.name === 'Vessel Spells' || s.name === game.i18n.localize("pf2e-dailies.animist.spellcasting.focus"));
+        .find(s => s.name === "Vessel Spells" || s.name === game.i18n.localize("pf2e-dailies.animist.spellcasting.focus"));
 
     return {entry, focus}
 }
@@ -41,7 +41,7 @@ async function getSpellEntries(actor) {
     if (!entry) {
         let spellE = foundry.utils.deepClone(SPELLCASTING_ENTRY);
 
-        Object.keys(spellE.system.slots).filter(k => k !== 'slot0' && k !== 'slot11')
+        Object.keys(spellE.system.slots).filter(k => k !== "slot0" && k !== "slot11")
             .forEach((element, index) => {
                 spellE.system.slots[element].value = LEVEL_SLOT[actor.level - 1][index]
                 spellE.system.slots[element].max = LEVEL_SLOT[actor.level - 1][index]
@@ -60,13 +60,13 @@ async function getSpellEntries(actor) {
     }
 
     if (!focus) {
-        if (actor?.class?.slug === 'animist') {
+        if (actor?.class?.slug === "animist") {
             let focusE = foundry.utils.deepClone(FOCUS_ENTRY);
             focusE._id = foundry.utils.randomID()
             focusE.flags[moduleName] = {
                 generated: true
             }
-            if (game.modules.get('pf2e-dailies')?.active) {
+            if (game.modules.get("pf2e-dailies")?.active) {
                 focusE.name = game.i18n.localize("pf2e-dailies.animist.spellcasting.focus");
             }
             focus = (await actor.createEmbeddedDocuments("Item", [focusE]))[0];
@@ -100,7 +100,7 @@ async function deleteLoreSpells(actor, entry, focus) {
 async function createLores(actor) {
     let lores = actor.getRollOptions()
         .filter(o => APPARITION_OPTIONS.some(a => o.startsWith(a)))
-        .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join('|')}`, 'i'), ''))
+        .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join("|")}`, "i"), ""))
         .map(r => APPARITIONS[r] || [])
         .flat()
 
@@ -138,12 +138,12 @@ async function prepareSpell(uuid, spellEntry, withSignature=true) {
 
 async function createSpells(spellEntry, lores) {
     let rollOptions = spellEntry.actor.getRollOptions();
-    let maxRank = rollOptions?.includes('class:animist')
+    let maxRank = rollOptions?.includes("class:animist")
         ? Math.ceil(spellEntry.actor.level / 2)
         : 0;
     let apSpells = rollOptions
         .filter(o => APPARITION_OPTIONS.some(a => o.startsWith(a)))
-        .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join('|')}`, 'i'), ''))
+        .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join("|")}`, "i"), ""))
         .map(r => APPARITIONS_SPELLCASTING[r] || [])
 
     let allSpells = []
@@ -170,7 +170,7 @@ async function createSpells(spellEntry, lores) {
     if (rollOptions.includes("feat:wind-seeker")) {
         allSpells.push(await prepareSpell("Compendium.pf2e.spells-srd.Item.NzXpEzcZAjuDTZjK", spellEntry));
     }
-    if (rollOptions.includes('feat:monstrous-inclinations') && (lores.includes('Forest') || lores.includes('Ocean'))) {
+    if (rollOptions.includes("feat:monstrous-inclinations") && (lores.includes("Forest") || lores.includes("Ocean"))) {
         allSpells.push(await prepareSpell("Compendium.pf2e.spells-srd.Item.8AMvNVOUEtxBCDvJ", spellEntry));
     }
 
@@ -184,8 +184,8 @@ async function createFocus(spellEntry, dualInvocation) {
         return;
     }
     let focus = spellEntry.actor.getRollOptions()
-        .filter(o => o.startsWith('primary-apparition:'))
-        .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join('|')}`, 'i'), ''))
+        .filter(o => o.startsWith("primary-apparition:"))
+        .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join("|")}`, "i"), ""))
         .map(r => VESSEL_FOCUS[r])
         .find(a => a)
     if (focus) {
@@ -197,8 +197,8 @@ async function createFocus(spellEntry, dualInvocation) {
 
     if (dualInvocation) {
         let focus2 = spellEntry.actor.getRollOptions()
-            .filter(o => o.startsWith('secondary-apparition:'))
-            .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join('|')}`, 'i'), ''))
+            .filter(o => o.startsWith("secondary-apparition:"))
+            .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join("|")}`, "i"), ""))
             .map(r => VESSEL_FOCUS[r])
             .find(a => a)
         if (focus2) {
@@ -211,7 +211,7 @@ async function createFocus(spellEntry, dualInvocation) {
 }
 
 Hooks.on("pf2e.restForTheNight", async (actor) => {
-    if (game.modules.get('pf2e-dailies')?.active) {
+    if (game.modules.get("pf2e-dailies")?.active) {
         return
     }
     if (!actor) {
@@ -231,9 +231,9 @@ Hooks.on("pf2e.restForTheNight", async (actor) => {
         await focus.delete()
     }
 
-    let aa = actor.itemTypes.feat.find(s => s.slug === 'apparition-attunement');
-    let ta = actor.itemTypes.feat.find(s => s.slug === 'third-apparition');
-    let fa = actor.itemTypes.feat.find(s => s.slug === 'fourth-apparition');
+    let aa = actor.itemTypes.feat.find(s => s.slug === "apparition-attunement");
+    let ta = actor.itemTypes.feat.find(s => s.slug === "third-apparition");
+    let fa = actor.itemTypes.feat.find(s => s.slug === "fourth-apparition");
     if (aa) {
         actor.toggleRollOption("all", "primary-apparition", aa.id, true, "dispersed")
         actor.toggleRollOption("all", "secondary-apparition", aa.id, true, "dispersed")
@@ -259,9 +259,9 @@ Hooks.on("renderCharacterSheetPF2e", (sheet, html) => {
             <i class="fa-solid fa-ghost"></i>
         </a>
     `)
-    btn.on('click', (e) => applyChanges(sheet.object));
+    btn.on("click", (e) => applyChanges(sheet.object));
 
-    html.find('aside .sidebar .hp-small')
+    html.find("aside .sidebar .hp-small")
         .append(btn)
 });
 
@@ -313,9 +313,9 @@ Hooks.on("preUpdateActor", async (actor, data) => {
         let third = data?.flags?.["pf2e-dailies"]?.dailies?.animist?.apparition3 || actor?.flags?.["pf2e-dailies"]?.dailies?.animist?.apparition3
         let fourth = data?.flags?.["pf2e-dailies"]?.dailies?.animist?.apparition4 || actor?.flags?.["pf2e-dailies"]?.dailies?.animist?.apparition4
 
-        let aa = actor.itemTypes.feat.find(s => s.slug === 'apparition-attunement');
-        let ta = actor.itemTypes.feat.find(s => s.slug === 'third-apparition');
-        let fa = actor.itemTypes.feat.find(s => s.slug === 'fourth-apparition');
+        let aa = actor.itemTypes.feat.find(s => s.slug === "apparition-attunement");
+        let ta = actor.itemTypes.feat.find(s => s.slug === "third-apparition");
+        let fa = actor.itemTypes.feat.find(s => s.slug === "fourth-apparition");
 
         if (aa && UUID_APPARITIONS[first] && UUID_APPARITIONS[second]) {
             await actor.toggleRollOption("all", "primary-apparition", aa.id, true, UUID_APPARITIONS[first])
