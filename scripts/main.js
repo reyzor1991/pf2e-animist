@@ -215,7 +215,6 @@ async function createFocus(spellEntry, dualInvocation, rollOptions) {
             .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join("|")}`, "i"), ""))
             .filter(s => s !== "dispersed")
             .length;
-        console.log(app)
 
         let spells = spellEntry.actor.itemTypes
             .spell.filter(s=>s?.system?.location?.value === spellEntry.id)
