@@ -860,5 +860,13 @@ export const FOCUS_ENTRY = {
     "flags": {}
 }
 
+export const OVERRIDE_EFFECT = {
+    "key": "ActiveEffectLike",
+    "mode": "override",
+    "path": "system.resources.focus.max",
+    "priority": 10,
+    "value": 1
+}
+
 export const APPARITION_OPTIONS = ["primary-apparition:", "secondary-apparition:", "third-apparition:", "fourth-apparition:"];
 

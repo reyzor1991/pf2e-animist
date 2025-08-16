@@ -7,7 +7,7 @@ import {
     FOURTH,
     LEVEL_SLOT,
     LORE_SKILL,
-    moduleName,
+    moduleName, OVERRIDE_EFFECT,
     SECOND,
     SPELLCASTING_ENTRY,
     THIRD,
@@ -22,7 +22,8 @@ async function applyChanges(actor) {
     let lores = await createLores(actor)
 
     await createSpells(entry, lores)
-    await createFocus(focus, actor.level >= 9 && actor.getRollOptions().includes("feature:medium"))
+    let rollOptions = actor.getRollOptions();
+    await createFocus(focus, actor.level >= 9 && rollOptions.includes("feature:medium"), rollOptions)
 }
 
 function currentSpellEntries(actor) {
@@ -127,7 +128,7 @@ async function createLores(actor) {
     return lores;
 }
 
-async function prepareSpell(uuid, spellEntry, withSignature=true) {
+async function prepareSpell(uuid, spellEntry, withSignature = true) {
     let o = (await fromUuid(uuid)).toObject();
     o.system.location.value = spellEntry.id;
     if (game.settings.get(moduleName, "signatureSpell") && withSignature) {
@@ -179,7 +180,7 @@ async function createSpells(spellEntry, lores) {
     ui.notifications.info(`Spells were changed for ${spellEntry.actor.name}`);
 }
 
-async function createFocus(spellEntry, dualInvocation) {
+async function createFocus(spellEntry, dualInvocation, rollOptions) {
     if (!spellEntry) {
         return;
     }
@@ -207,6 +208,23 @@ async function createFocus(spellEntry, dualInvocation) {
 
             await spellEntry.actor.createEmbeddedDocuments("Item", [focus2]);
         }
+    }
+    if (rollOptions.includes("feat:circle-of-spirits")) {
+        let app = rollOptions
+            .filter(o => APPARITION_OPTIONS.some(a => o.startsWith(a)))
+            .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join("|")}`, "i"), ""))
+            .filter(s => s !== "dispersed")
+            .length;
+        console.log(app)
+
+        let spells = spellEntry.actor.itemTypes
+            .spell.filter(s=>s?.system?.location?.value === spellEntry.id)
+            .length;
+
+        let effect = foundry.utils.deepClone(OVERRIDE_EFFECT);
+        effect.value = Math.max(Math.max(app, spells), 1);
+
+        spellEntry.update({"system.rules": [effect]});
     }
 }
 
@@ -282,23 +300,22 @@ Hooks.once("setup", () => {
     }
 })
 
-
 Hooks.on("preCreateItem", (item) => {
     if (item?.sourceId === "Compendium.pf2e.classfeatures.Item.AHMjKkIx21AoMc9W") {
         item.updateSource({
-            "system.rules": [FIRST, SECOND, ...item.rules.map(r => r.toObject())]
+            "system.rules": [FIRST, SECOND, ...item.system.rules]
         })
     } else if (item?.sourceId === "Compendium.pf2e.classfeatures.Item.bRAjde9LlavcOUuM") {
         item.updateSource({
-            "system.rules": [THIRD, ...item.rules.map(r => r.toObject())]
+            "system.rules": [THIRD, ...item.system.rules]
         })
     } else if (item?.sourceId === "Compendium.pf2e.classfeatures.Item.avLo2Jl3mNWssp0W") {
         item.updateSource({
-            "system.rules": [FOURTH, ...item.rules.map(r => r.toObject())]
+            "system.rules": [FOURTH, ...item.system.rules]
         })
     } else if (item?.sourceId === "Compendium.pf2e.feats-srd.Item.5hFFM5TmhKYSQwtG") {
         item.updateSource({
-            "system.rules": [FIRST, ...item.rules.map(r => r.toObject())]
+            "system.rules": [FIRST, ...item.system.rules]
         })
     }
 })

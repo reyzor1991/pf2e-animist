@@ -1,3 +1,6 @@
+## Version 0.2.6
+- Add support of circle of spirits
+
 ## Version 0.2.5
 - Add Shepherd of Errant Winds
 - Add Speaker in Sibilance
