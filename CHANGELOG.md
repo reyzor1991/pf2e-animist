@@ -1,3 +1,6 @@
+## Version 0.2.7
+- Update Chinese localization (Kuroni)
+
 ## Version 0.2.6
 - Add support of circle of spirits
 
