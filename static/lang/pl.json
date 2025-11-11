@@ -1,0 +1,23 @@
+{
+  "pf2e-animist": {
+    "primary-label": "Pierwsza Projekcja",
+    "secondary-label": "Druga Projekcja",
+    "third-label": "Trzecia Projekcja",
+    "fourth-label": "Czwarta Projekcja",
+
+    "crafter-in-the-vault": "Rzemieślnik ze Skarbca",
+    "custodian-of-groves-and-gardens": "Strażnik Gajów i Ogrodów",
+    "echo-of-lost-moments": "Echo Utraconych Chwil",
+    "impostor-in-hidden-places": "Oszust z Zakamarków",
+    "lurker-in-devouring-dark": "Czający się w Pochłaniającym Mroku",
+    "monarch-of-the-fey-courts": "Monarcha Dworu Fey",
+    "reveler-in-lost-glee": "Biesiadnik Minionej Uciechy",
+    "shepherd-of-errant-winds": "Pasterz Zbłąkanych Wiatrów",
+    "speaker-in-sibilance": "Syczący Mówca",
+    "stalker-in-darkened-boughs": "Prześladowca w Mrocznych Konarach",
+    "steward-of-stone-and-fire": "Namiestnik Skały i Płomienia",
+    "vanguard-of-roaring-waters": "Przywódca Ryczących Wód",
+    "witness-to-ancient-battles": "Świadek Pradawnych Bitew",
+    "dispersed": "Rozproszenie"
+  }
+}
