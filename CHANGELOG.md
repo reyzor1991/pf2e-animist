@@ -1,3 +1,6 @@
+## Version 0.2.8
+- Update Polish localization (Lioheart)
+
 ## Version 0.2.7
 - Update Chinese localization (Kuroni)
 
