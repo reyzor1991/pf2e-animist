@@ -1,3 +1,6 @@
+## Version 0.3.0
+- v14
+
 ## Version 0.2.8
 - Update Polish localization (Lioheart)
 
