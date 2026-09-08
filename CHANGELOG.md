@@ -1,3 +1,6 @@
+## Version 0.3.1
+- Add Lamentation of Sinister Deals
+
 ## Version 0.3.0
 - v14
 

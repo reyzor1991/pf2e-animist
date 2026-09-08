@@ -2,7 +2,7 @@
   "id": "pf2e-animist",
   "title": "PF2e Animist",
   "description": "",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "authors": [
     {
       "name": "Reyzor",
@@ -30,6 +30,11 @@
       "lang": "pl",
       "name": "Polski",
       "path": "lang/pl.json"
+    },
+    {
+      "lang": "uk",
+      "name": "Українська",
+      "path": "lang/uk.json"
     }
   ],
   "esmodules": [

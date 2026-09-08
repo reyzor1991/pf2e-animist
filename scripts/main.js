@@ -1,7 +1,6 @@
 import {
     APPARITION_OPTIONS,
     APPARITIONS,
-    APPARITIONS_SPELLCASTING,
     FIRST,
     FOCUS_ENTRY,
     FOURTH,
@@ -12,7 +11,6 @@ import {
     SPELLCASTING_ENTRY,
     THIRD,
     UUID_APPARITIONS,
-    VESSEL_FOCUS
 } from "./const.js";
 
 async function applyChanges(actor) {
@@ -102,7 +100,7 @@ async function createLores(actor) {
     let lores = actor.getRollOptions()
         .filter(o => APPARITION_OPTIONS.some(a => o.startsWith(a)))
         .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join("|")}`, "i"), ""))
-        .map(r => APPARITIONS[r] || [])
+        .map(r => APPARITIONS[r]?.lore ?? [])
         .flat()
 
     let items = lores.map(lore => {
@@ -145,7 +143,7 @@ async function createSpells(spellEntry, lores) {
     let apSpells = rollOptions
         .filter(o => APPARITION_OPTIONS.some(a => o.startsWith(a)))
         .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join("|")}`, "i"), ""))
-        .map(r => APPARITIONS_SPELLCASTING[r] || [])
+        .map(r => APPARITIONS[r]?.spells ?? [])
 
     let allSpells = []
     for (const spells of apSpells) {
@@ -187,7 +185,7 @@ async function createFocus(spellEntry, dualInvocation, rollOptions) {
     let focus = spellEntry.actor.getRollOptions()
         .filter(o => o.startsWith("primary-apparition:"))
         .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join("|")}`, "i"), ""))
-        .map(r => VESSEL_FOCUS[r])
+        .map(r => APPARITIONS[r]?.vesselFocus)
         .find(a => a)
     if (focus) {
         focus = (await fromUuid(focus)).toObject();
@@ -200,7 +198,7 @@ async function createFocus(spellEntry, dualInvocation, rollOptions) {
         let focus2 = spellEntry.actor.getRollOptions()
             .filter(o => o.startsWith("secondary-apparition:"))
             .map(s => s.replace(new RegExp(`${APPARITION_OPTIONS.join("|")}`, "i"), ""))
-            .map(r => VESSEL_FOCUS[r])
+            .map(r => APPARITIONS[r]?.vesselFocus)
             .find(a => a)
         if (focus2) {
             focus2 = (await fromUuid(focus2)).toObject();

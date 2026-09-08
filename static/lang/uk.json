@@ -1,0 +1,24 @@
+{
+  "pf2e-animist": {
+    "primary-label": "Перша Примара",
+    "secondary-label": "Друга Примара",
+    "third-label": "Третя Примара",
+    "fourth-label": "Четверта Примара",
+
+    "crafter-in-the-vault": "Майстер зі Сховища",
+    "custodian-of-groves-and-gardens": "Хранитель Гаїв і Садів",
+    "echo-of-lost-moments": "Відлуння Втрачених Миттєвостей",
+    "impostor-in-hidden-places": "Самозванець у Прихованих Місцях",
+    "lurker-in-devouring-dark": "Той, що Ховається у Пожирній Темряві",
+    "monarch-of-the-fey-courts": "Монарх Дворів Фей",
+    "reveler-in-lost-glee": "Гуляка Минулої Радості",
+    "shepherd-of-errant-winds": "Пастир Блукаючих Вітрів",
+    "lamentation-of-sinister-deals": "Лементація над Зловісними Угодами",
+    "speaker-in-sibilance": "Шиплячий Мовець",
+    "stalker-in-darkened-boughs": "Переслідувач у Темних Гілках",
+    "steward-of-stone-and-fire": "Управитель Каменю та Вогню",
+    "vanguard-of-roaring-waters": "Авангард Ревучих Вод",
+    "witness-to-ancient-battles": "Свідок Давніх Битв",
+    "dispersed": "Розсіяний"
+  }
+}
